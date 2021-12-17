@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./components/Sidebar.js";
+import Sidebar from "./components/Sidebar.js";
+import Display from "./components/Display.js";
+import io from "socket.io-client";
 
 function App() {
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="bg-emerald-900 h-screen">
+      <header className="flex bg-emerald-900 text-gray-300 text-xs shadow-xs text-right p-1 justify-end">
+        <div className="bg-emerald-800 p-2 m-0 rounded-md">SPAMS WEB 1.1</div>
       </header>
+       <div>
+      <Sidebar />
+      <Display />
+      </div>
+      <footer className="text-center text-gray-300 flex justify-center">
+        <div className="bg-emerald-600 rounded-md p-3 m-1">© 2019-2021 Tan Yan Hui <br></br>You are not allowed to reproduce this
+        work in any media.</div>
+      </footer>
     </div>
   );
 }
