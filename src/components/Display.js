@@ -1,6 +1,7 @@
 import Control from "./Control.js";
 import Servo from "./Servo.js";
 import Buzzer from "./Buzzer.js";
+import Motion from "./Motion.js"
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -19,7 +20,7 @@ function Display() {
             // dragElastic={1}
             className="basis-1/3 m-3 "
           >
-            <Control className="basis-1/3" controlType="Servo Lug" />
+            <Control className="basis-1/3" controlType="Canopy Angle" />
             <Servo /> 
           </motion.div>
           <motion.div drag className="basis-1/3 m-3 ">
@@ -27,7 +28,8 @@ function Display() {
             <Buzzer />
           </motion.div>
           <motion.div drag className="basis-1/3 m-3  ">
-            <Control className="basis-1/3" controlType="Users" />
+            <Control className="basis-1/3" controlType="Motion" />
+            <Motion/>
           </motion.div>
         </div>
       </div>
