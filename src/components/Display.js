@@ -1,5 +1,6 @@
 import Control from "./Control.js";
 import Servo from "./Servo.js";
+import Buzzer from "./Buzzer.js";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -23,6 +24,7 @@ function Display() {
           </motion.div>
           <motion.div drag className="basis-1/3 m-3 ">
             <Control className="basis-1/3" controlType="Buzzer" />
+            <Buzzer />
           </motion.div>
           <motion.div drag className="basis-1/3 m-3  ">
             <Control className="basis-1/3" controlType="Users" />
