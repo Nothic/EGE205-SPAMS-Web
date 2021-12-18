@@ -1,5 +1,6 @@
 import Control from "./Control.js";
 import Servo from "./Servo.js";
+import Buzzer from "./Buzzer.js";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -12,17 +13,21 @@ function Display() {
           Sensor Label
         </div>
         <div className="flex justify-around " ref={constraintsRef}>
-          <motion.div drag dragConstraints={constraintsRef} dragElastic={1} className="basis-1/3 m-3 " >
+          <motion.div
+            // drag
+            // dragConstraints={constraintsRef}
+            // dragElastic={1}
+            className="basis-1/3 m-3 "
+          >
             <Control className="basis-1/3" controlType="Servo Lug" />
             <Servo />
           </motion.div>
           <motion.div drag className="basis-1/3 m-3 ">
             <Control className="basis-1/3" controlType="Buzzer" />
-            
+            <Buzzer />
           </motion.div>
           <motion.div drag className="basis-1/3 m-3  ">
             <Control className="basis-1/3" controlType="Users" />
-            
           </motion.div>
         </div>
       </div>

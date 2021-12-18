@@ -1,4 +1,5 @@
 import ToggleSwitch from "./ToggleSwitch";
+import Slider from "./Slider";
 import socketio, { io } from "socket.io-client";
 import { LockOpenIcon } from "@heroicons/react/solid";
 import { LockClosedIcon } from "@heroicons/react/solid";
@@ -18,19 +19,10 @@ function Servo() {
     servoSwitch = <LockClosedIcon />;
   };
 
-  const getToggleState = (isOn) => {
-    if (isOn) {
-      setCount(1);
-    } else {
-      setCount(0);
-    }
-    pingServo(count);
-  }
-
   return (
     <div className="bg-emerald-200 rounded-b-md shadow-xl">
       <div id="lockStatus">{servoSwitch}</div>
-      <div className="flex justify-center">
+      <div className="flex justify-center bg-emerald-600">
         <button
           id="ping servo"
           onClick={() => {
@@ -53,10 +45,13 @@ function Servo() {
           Unlock
         </button>
       </div>
-      <div className="flex justify-evenly items-center bg-emerald-600">
-        <div>Lock</div>
+      <div className="flex justify-evenly items-center bg-emerald-600 rounded-b-md p-1">
+        <div>Servo Angle</div>
         <div>
-          <ToggleSwitch sendState={getToggleState}/>
+
+        
+          <Slider />
+
         </div>
       </div>
     </div>
