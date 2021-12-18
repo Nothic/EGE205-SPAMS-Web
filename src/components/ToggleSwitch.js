@@ -2,10 +2,17 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-function ToggleSwitch() {
+function ToggleSwitch(props) {
   const [isOn, setIsOn] = useState(false);
 
-  const toggleSwitch = () => setIsOn(!isOn);
+  function sendToggleState() {
+    props.sendState(!isOn);
+  }
+
+  const toggleSwitch = () => {
+    setIsOn(!isOn);
+    sendToggleState();
+  }
 
   const spring = {
     type: "spring",
