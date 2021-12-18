@@ -9,6 +9,7 @@ function ServoSlider() {
     setAngle(e.target.value);
     console.log(angle);
     socket.emit("BBBW1_ServoAngle", e.target.value);
+    socket.disconnect()
   };
 
   return (
