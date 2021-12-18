@@ -16,6 +16,15 @@ function Servo() {
   const [count, setCount] = useState(0);
   if (count === 1) {
     servoSwitch = <LockClosedIcon />;
+  };
+
+  const getToggleState = (isOn) => {
+    if (isOn) {
+      setCount(1);
+    } else {
+      setCount(0);
+    }
+    pingServo(count);
   }
 
   return (
@@ -47,7 +56,7 @@ function Servo() {
       <div className="flex justify-evenly items-center bg-emerald-600">
         <div>Lock</div>
         <div>
-          <ToggleSwitch />
+          <ToggleSwitch sendState={getToggleState}/>
         </div>
       </div>
     </div>
