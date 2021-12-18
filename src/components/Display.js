@@ -20,7 +20,7 @@ function Display() {
             className="basis-1/3 m-3 "
           >
             <Control className="basis-1/3" controlType="Servo Lug" />
-            <Servo />
+            <Servo /> 
           </motion.div>
           <motion.div drag className="basis-1/3 m-3 ">
             <Control className="basis-1/3" controlType="Buzzer" />

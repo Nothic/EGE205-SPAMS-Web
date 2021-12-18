@@ -1,5 +1,4 @@
-import ToggleSwitch from "./ToggleSwitch";
-import Slider from "./Slider";
+import Slider from "./ServoSlider";
 import socketio, { io } from "socket.io-client";
 import { LockOpenIcon } from "@heroicons/react/solid";
 import { LockClosedIcon } from "@heroicons/react/solid";
@@ -17,7 +16,7 @@ function Servo() {
   const [count, setCount] = useState(0);
   if (count === 1) {
     servoSwitch = <LockClosedIcon />;
-  };
+  }
 
   return (
     <div className="bg-emerald-200 rounded-b-md shadow-xl">
@@ -48,10 +47,7 @@ function Servo() {
       <div className="flex justify-evenly items-center bg-emerald-600 rounded-b-md p-1">
         <div>Servo Angle</div>
         <div>
-
-        
           <Slider />
-
         </div>
       </div>
     </div>
