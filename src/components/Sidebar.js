@@ -22,7 +22,7 @@ function SidebarItem(ItemName, IconName) {
 var GlobalPanelType = "State";
 
 function CheckItem() {
-  var PanelType = document.getElementsByID("flex").textContent;
+  var PanelType = "test";
   GlobalPanelType = PanelType;
   console.log(GlobalPanelType);
 }

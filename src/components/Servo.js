@@ -1,24 +1,55 @@
 import ToggleSwitch from "./ToggleSwitch";
 import socketio, { io } from "socket.io-client";
+import { LockOpenIcon } from "@heroicons/react/solid";
+import { LockClosedIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 
-function pingServo() {
+function pingServo(count) {
   var socket = io("http://localhost:3001/");
-  var buttonServo = document.getElementById('ping servo')
-  console.log("Button pressed");
-
-//   form.addEventListener('')
+  var buttonServo = document.getElementById("ping servo");
+  //send signal to bbbw board
+  socket.emit("ping servo", count);
 }
 
 function Servo() {
+  let servoSwitch = <LockOpenIcon />;
+  const [count, setCount] = useState(0);
+  if (count === 1) {
+    servoSwitch = <LockClosedIcon />;
+  }
+
   return (
-    <div className="bg-emerald-100 rounded-b-md">
-      <ToggleSwitch />
-      <button id='ping servo'
-        onClick={pingServo()}
-        className="bg-emerald-500 rounded-md m-1 p-1"
-      >
-        Ping Server
-      </button>
+    <div className="bg-emerald-200 rounded-b-md shadow-xl">
+      <div id="lockStatus">{servoSwitch}</div>
+      <div className="flex justify-center">
+        <button
+          id="ping servo"
+          onClick={() => {
+            setCount(1);
+            pingServo(count);
+          }}
+          className="bg-emerald-500 rounded-md m-1 p-1"
+        >
+          Lock
+        </button>
+
+        <button
+          id="ping servo"
+          onClick={() => {
+            setCount(0);
+            pingServo(count);
+          }}
+          className="bg-red-400 rounded-md m-1 p-1"
+        >
+          Unlock
+        </button>
+      </div>
+      <div className="flex justify-evenly items-center bg-emerald-600">
+        <div>Lock</div>
+        <div>
+          <ToggleSwitch />
+        </div>
+      </div>
     </div>
   );
 }

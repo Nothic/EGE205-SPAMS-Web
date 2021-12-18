@@ -10,19 +10,24 @@ function ToggleSwitch() {
   const spring = {
     type: "spring",
     stiffness: 700,
-    damping: 30
-  }
+    damping: 30,
+  };
 
-  return(
-    <div 
-      className="h-[26px] w-[50px] m-[10px]"
-    >
+  return (
+    <div className="h-[26px] w-[50px] m-[10px]">
       <div
-        className={isOn ? "p-[3px] rounded-full flex justify-end bg-emerald-300": "p-[3px] rounded-full flex justify-start bg-emerald-200"}
-        data-isOn={isOn}
+        className={
+          isOn
+            ? "p-[3px] rounded-full flex justify-end bg-emerald-600 shadow-xl"
+            : "p-[3px] rounded-full flex justify-start bg-red-300 shadow-xl"
+        }
         onClick={toggleSwitch}
       >
-        <motion.div className="bg-white h-[20px] w-[20px] rounded-full" layout transition={spring}/>
+        <motion.div
+          className="bg-white h-[20px] w-[20px] rounded-full"
+          layout
+          transition={spring}
+        />
       </div>
     </div>
   );
