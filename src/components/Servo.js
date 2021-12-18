@@ -1,4 +1,5 @@
 import ToggleSwitch from "./ToggleSwitch";
+import Slider from "./Slider";
 import socketio, { io } from "socket.io-client";
 import { LockOpenIcon } from "@heroicons/react/solid";
 import { LockClosedIcon } from "@heroicons/react/solid";
@@ -48,6 +49,9 @@ function Servo() {
         <div>Lock</div>
         <div>
           <ToggleSwitch />
+        </div>
+        <div>
+          <Slider />
         </div>
       </div>
     </div>
