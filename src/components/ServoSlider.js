@@ -21,10 +21,6 @@ function ServoSlider() {
         onChange={(e) => {
           handleChange(e);
         }}
-
-        onClick={(e) => {
-          handleChange(e);
-        }}
       />
       <div className="m-[5px]">{angle}</div>
     </div>

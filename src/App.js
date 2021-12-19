@@ -10,7 +10,7 @@ function App() {
       <header className="flex bg-emerald-900 text-gray-300 text-xs shadow-xs text-right p-1 justify-end">
         <div className="bg-emerald-800 p-2 m-0 rounded-md">SPAMS WEB 1.1</div>
         <div>
-          <Clock poo="pee pee poo poo" />
+          <Clock poo="Time:" />
         </div>
       </header>
       <div>

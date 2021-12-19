@@ -6,7 +6,7 @@ import socket from "./SocketConnect.js";
 function Motion() {
   const [motion, setMotion] = useState(<StatusOnlineIcon />);
   useEffect(() => {
-    socket.on("Panel_Update", (motionFlag) => {
+    socket.on("Panel_Buzz", (motionFlag) => {
       if (motionFlag === 1) {
         setMotion(<ExclamationCircleIcon />);
         console.log("motion update");

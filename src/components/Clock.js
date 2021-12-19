@@ -9,8 +9,10 @@ function Clock(props) {
 
   return (
     <div>
-      <h1>Hello {props.poo}</h1>
-      <h2>It is {time.toLocaleTimeString()}</h2>
+      <h2>
+        {props.poo}
+        {time.toLocaleTimeString()}
+      </h2>
     </div>
   );
 }

@@ -4,22 +4,24 @@ import { useEffect, useState } from "react";
 import socket from "./SocketConnect.js";
 
 function Buzzer() {
-
   const [buzzerState, setBuzzer] = useState(<VolumeOffIcon />);
+
   useEffect(() => {
-    socket.on("Panel_Update", (motionFlag) => {
+    socket.on("Panel_Buzz", (motionFlag) => {
       if (motionFlag === 1) {
         setBuzzer(<VolumeUpIcon />);
+       // console.log("motion update");
         socket.emit("BBBW1_buzzerOn", 90);
-        console.log("buzzer trip!");
-        
+        //socket.close();
       } else {
         setBuzzer(<VolumeOffIcon />);
+      //  console.log("no motion update");
         socket.emit("BBBW1_buzzerOn", 0);
-        console.log("buzzer armed!");
+        //socket.close();
       }
     });
-  });
+  },[]);
+
   return (
     <>
       <div className="bg-emerald-200 rounded-b-md shadow-xl">

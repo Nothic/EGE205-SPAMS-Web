@@ -36,7 +36,6 @@ function Sidebar() {
         {SidebarItem("Access Control", CogIcon)}
         {SidebarItem("Pest Report", MinusCircleIcon)}
       </ul>
-      {GlobalPanelType}
     </>
   );
 }
