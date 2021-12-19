@@ -1,15 +1,14 @@
-import socketio, { io } from "socket.io-client";
 import React from "react";
 import { useState } from "react";
+import socket from "./SocketConnect.js";
 
 function ServoSlider() {
-  var socket = io("http://localhost:3001/");
   const [angle, setAngle] = useState(50);
   const handleChange = (e) => {
     setAngle(e.target.value);
     console.log(angle);
     socket.emit("BBBW1_ServoAngle", e.target.value);
-    socket.disconnect()
+    
   };
 
   return (

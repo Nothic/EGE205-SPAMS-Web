@@ -1,14 +1,12 @@
 import Slider from "./ServoSlider";
-import { io } from "socket.io-client";
+import socket from "./SocketConnect.js";
 import { LockOpenIcon } from "@heroicons/react/solid";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 
 function pingServo(count) {
-  var socket = io("http://localhost:3001/");
   //send signal to bbbw board
   socket.emit("ping servo", count);
-  socket.disconnect()
 }
 
 function Servo() {
