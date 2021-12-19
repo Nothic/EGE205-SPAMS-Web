@@ -20,7 +20,7 @@ function Servo() {
     <div className="bg-emerald-200 rounded-b-md shadow-xl">
       <div id="lockStatus">{servoSwitch}</div>
       <div className="flex justify-center bg-emerald-600">
-        <button
+        {/* <button
           id="ping servo"
           onClick={() => {
             setCount(1);
@@ -40,7 +40,7 @@ function Servo() {
           className="bg-red-400 rounded-md m-1 p-1"
         >
           Unlock
-        </button>
+        </button> */}
       </div>
       <div className="flex justify-evenly items-center bg-emerald-600 rounded-b-md p-1">
         <div>Servo Angle</div>
